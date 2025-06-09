@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Post</title>
+</head>
+<body>
+  <div id="content">Loading...</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch(window.location.pathname)
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      });
+  </script>
+</body>
+</html>
